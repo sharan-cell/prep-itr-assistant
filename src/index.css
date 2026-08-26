@@ -1,0 +1,576 @@
+@import "tailwindcss";
+
+/* UX4G Design System Foundations & Semantic Tokens */
+:root {
+  /* Font */
+  --ux4g-font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Semantic Colors (Default UX4G Light Theme) */
+  --ux4g-bg-default: #FAFAFA;
+  --ux4g-bg-elevated: #FFFFFF;
+  --ux4g-bg-soft: #F5F5F5;
+  --ux4g-bg-subtle: #E5E5E5;
+  --ux4g-bg-emphasis: #D9D9D9;
+
+  /* Brand / Primary */
+  --ux4g-primary-strong: #4A2BC2;
+  --ux4g-primary-hover: #3D22A4;
+  --ux4g-primary-subtle: #EDE9FE;
+  --ux4g-primary-text: #4A2BC2;
+  
+  /* Neutral Text */
+  --ux4g-text-primary: #171717;
+  --ux4g-text-secondary: #404040;
+  --ux4g-text-tertiary: #737373;
+  --ux4g-text-disabled: rgba(23, 23, 23, 0.38);
+  --ux4g-text-inverse: #FAFAFA;
+
+  /* Status Colors */
+  --ux4g-status-success: #00522C;
+  --ux4g-status-success-bg: #E6F4EA;
+  --ux4g-status-success-border: #A8DAB5;
+  
+  --ux4g-status-warning: #8F4000;
+  --ux4g-status-warning-bg: #FEF3D6;
+  --ux4g-status-warning-border: #FCD34D;
+  
+  --ux4g-status-error: #8A1A16;
+  --ux4g-status-error-bg: #FCE8E6;
+  --ux4g-status-error-border: #F5A39E;
+  
+  --ux4g-status-info: #004D6D;
+  --ux4g-status-info-bg: #E1F5FE;
+  --ux4g-status-info-border: #81D4FA;
+
+  /* Borders & Control Boundaries */
+  --ux4g-border-default: #D9D9D9;
+  --ux4g-border-strong: #737373;
+  --ux4g-border-subtle: #E5E5E5;
+  --ux4g-control-border: #737373; /* Meets WCAG 3:1 non-text contrast requirement */
+
+  /* Global Focus Outline */
+  --ux4g-focus-outline: #4A2BC2;
+  --ux4g-focus-shadow: 0 0 0 3px rgba(74, 43, 194, 0.35);
+
+  /* Spacing Scale */
+  --ux4g-space-1: 2px;
+  --ux4g-space-2: 4px;
+  --ux4g-space-3: 6px;
+  --ux4g-space-4: 8px;
+  --ux4g-space-5: 12px;
+  --ux4g-space-6: 16px;
+  --ux4g-space-7: 20px;
+  --ux4g-space-8: 24px;
+  --ux4g-space-9: 32px;
+  --ux4g-space-10: 40px;
+  --ux4g-space-11: 48px;
+
+  /* Radius */
+  --ux4g-radius-sm: 4px;
+  --ux4g-radius-md: 8px;
+  --ux4g-radius-lg: 12px;
+  --ux4g-radius-full: 9999px;
+
+  /* Dual-Shadow Elevation */
+  --ux4g-elevation-1: 0 1px 2px 0 rgba(0, 0, 0, 0.05), 0 1px 3px 0 rgba(0, 0, 0, 0.03);
+  --ux4g-elevation-2: 0 4px 8px 0 rgba(0, 0, 0, 0.08), 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+  --ux4g-elevation-3: 0 8px 16px 0 rgba(0, 0, 0, 0.12), 0 4px 8px 0 rgba(0, 0, 0, 0.06);
+}
+
+body {
+  font-family: var(--ux4g-font-family);
+  background-color: var(--ux4g-bg-default);
+  color: var(--ux4g-text-primary);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+}
+
+/* Accessible Keyboard Focus Ring */
+*:focus-visible {
+  outline: 2px solid var(--ux4g-focus-outline) !important;
+  outline-offset: 2px !important;
+}
+
+/* Accessibility Text Size Scalers */
+.text-size-normal {
+  font-size: 100%;
+}
+
+.text-size-large {
+  font-size: 112.5%;
+}
+
+.text-size-xlarge {
+  font-size: 125%;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   HIGH CONTRAST MODE
+   Applied globally to ALL elements — overrides both CSS variables AND
+   the Tailwind inline-color utility classes throughout the component tree.
+───────────────────────────────────────────────────────────────────────────── */
+.high-contrast-mode {
+  /* CSS variable overrides */
+  --ux4g-bg-default: #000000 !important;
+  --ux4g-bg-elevated: #000000 !important;
+  --ux4g-bg-soft: #111111 !important;
+  --ux4g-text-primary: #FFFFFF !important;
+  --ux4g-text-secondary: #FFFF00 !important;
+  --ux4g-text-tertiary: #00FFFF !important;
+  --ux4g-border-default: #FFFFFF !important;
+  --ux4g-border-strong: #FFFFFF !important;
+  --ux4g-control-border: #FFFF00 !important;
+  --ux4g-primary-strong: #FFFF00 !important;
+  --ux4g-primary-text: #FFFF00 !important;
+  --ux4g-focus-outline: #FFFF00 !important;
+  --ux4g-status-success-bg: #003300 !important;
+  --ux4g-status-success: #00FF88 !important;
+  --ux4g-status-warning-bg: #331100 !important;
+  --ux4g-status-warning: #FFCC00 !important;
+  --ux4g-status-error-bg: #330000 !important;
+  --ux4g-status-error: #FF6666 !important;
+  --ux4g-status-info-bg: #001133 !important;
+  --ux4g-status-info: #66CCFF !important;
+
+  /* Apply high contrast to ALL descendent elements */
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+/* Override Tailwind bg-white, bg-slate-*, bg-purple-* etc. */
+.high-contrast-mode *,
+.high-contrast-mode *::before,
+.high-contrast-mode *::after {
+  /* Kill ALL background colors except explicit high-contrast ones */
+  background-color: inherit;
+  color: inherit;
+  border-color: #444444 !important;
+}
+
+/* Elements that should be pure black background */
+.high-contrast-mode main,
+.high-contrast-mode section,
+.high-contrast-mode article,
+.high-contrast-mode div,
+.high-contrast-mode nav {
+  background-color: #000000 !important;
+}
+
+/* White text on all dark/colored backgrounds */
+.high-contrast-mode header,
+.high-contrast-mode footer,
+.high-contrast-mode [class*="bg-"] {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+}
+
+/* Cards */
+.high-contrast-mode .ux4g-card {
+  background-color: #111111 !important;
+  border: 2px solid #FFFF00 !important;
+  color: #FFFFFF !important;
+}
+
+/* Inputs */
+.high-contrast-mode .ux4g-input,
+.high-contrast-mode .ux4g-select,
+.high-contrast-mode .ux4g-textarea,
+.high-contrast-mode input,
+.high-contrast-mode select,
+.high-contrast-mode textarea {
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
+  border: 2px solid #FFFF00 !important;
+}
+
+.high-contrast-mode input::placeholder,
+.high-contrast-mode textarea::placeholder {
+  color: #AAAAAA !important;
+}
+
+/* Buttons */
+.high-contrast-mode .ux4g-btn-primary,
+.high-contrast-mode button[class*="bg-"] {
+  background-color: #FFFF00 !important;
+  color: #000000 !important;
+  border: 2px solid #FFFF00 !important;
+}
+
+.high-contrast-mode .ux4g-btn-outline-neutral,
+.high-contrast-mode .ux4g-btn-outline-primary {
+  background-color: #000000 !important;
+  color: #FFFF00 !important;
+  border: 2px solid #FFFF00 !important;
+}
+
+/* Badges */
+.high-contrast-mode .ux4g-badge {
+  background-color: #111111 !important;
+  color: #FFFFFF !important;
+  border: 1px solid #888888 !important;
+}
+
+/* Tables */
+.high-contrast-mode .ux4g-table th {
+  background-color: #111111 !important;
+  color: #FFFF00 !important;
+  border-color: #FFFFFF !important;
+}
+
+.high-contrast-mode .ux4g-table td {
+  color: #FFFFFF !important;
+  border-color: #444444 !important;
+}
+
+/* Force text readability */
+.high-contrast-mode span,
+.high-contrast-mode p,
+.high-contrast-mode label,
+.high-contrast-mode h1,
+.high-contrast-mode h2,
+.high-contrast-mode h3,
+.high-contrast-mode h4,
+.high-contrast-mode h5,
+.high-contrast-mode li {
+  color: #FFFFFF !important;
+}
+
+.high-contrast-mode a {
+  color: #00FFFF !important;
+  text-decoration: underline !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   UX4G Button Classes
+───────────────────────────────────────────────────────────────────────────── */
+.ux4g-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ux4g-font-family);
+  font-weight: 600;
+  border-radius: var(--ux4g-radius-md);
+  transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+  gap: 0.5rem;
+  line-height: 1.25;
+}
+
+.ux4g-btn-sm {
+  padding: 6px 12px;
+  font-size: 12px;
+  min-height: 32px;
+}
+
+.ux4g-btn-md {
+  padding: 8px 16px;
+  font-size: 14px;
+  min-height: 40px;
+}
+
+.ux4g-btn-lg {
+  padding: 12px 24px;
+  font-size: 16px;
+  min-height: 48px;
+}
+
+.ux4g-btn-primary {
+  background-color: var(--ux4g-primary-strong);
+  color: #FFFFFF;
+  border-color: var(--ux4g-primary-strong);
+}
+
+.ux4g-btn-primary:hover:not(:disabled) {
+  background-color: var(--ux4g-primary-hover);
+  border-color: var(--ux4g-primary-hover);
+}
+
+.ux4g-btn-secondary {
+  background-color: #0B3A70;
+  color: #FFFFFF;
+  border-color: #0B3A70;
+}
+
+.ux4g-btn-secondary:hover:not(:disabled) {
+  background-color: #082952;
+}
+
+.ux4g-btn-outline-primary {
+  background-color: transparent;
+  color: var(--ux4g-primary-strong);
+  border-color: var(--ux4g-primary-strong);
+}
+
+.ux4g-btn-outline-primary:hover:not(:disabled) {
+  background-color: var(--ux4g-primary-subtle);
+}
+
+.ux4g-btn-outline-neutral {
+  background-color: transparent;
+  color: var(--ux4g-text-primary);
+  border-color: var(--ux4g-border-strong);
+}
+
+.ux4g-btn-outline-neutral:hover:not(:disabled) {
+  background-color: var(--ux4g-bg-soft);
+}
+
+.ux4g-btn-tonal {
+  background-color: var(--ux4g-primary-subtle);
+  color: var(--ux4g-primary-strong);
+  border-color: transparent;
+}
+
+.ux4g-btn-tonal:hover:not(:disabled) {
+  background-color: #DDD6FE;
+}
+
+.ux4g-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   UX4G Currency Input Group
+   Fixes ₹ prefix overlapping the typed value.
+   Usage:
+     <div class="ux4g-input-group">
+       <span class="ux4g-input-prefix">₹</span>
+       <input class="ux4g-input ux4g-input-has-prefix" .../>
+     </div>
+───────────────────────────────────────────────────────────────────────────── */
+.ux4g-input-group {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+.ux4g-input-prefix {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  color: #6B7280;
+  font-weight: 600;
+  font-size: 14px;
+  pointer-events: none;
+  z-index: 1;
+  border-right: 1px solid #D1D5DB;
+  background-color: #F9FAFB;
+  border-top-left-radius: var(--ux4g-radius-md);
+  border-bottom-left-radius: var(--ux4g-radius-md);
+  user-select: none;
+}
+
+.ux4g-input-has-prefix {
+  /* Leave room for the 36px prefix column */
+  padding-left: 44px !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   UX4G Form Inputs
+───────────────────────────────────────────────────────────────────────────── */
+.ux4g-form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ux4g-text-primary);
+  margin-bottom: 4px;
+}
+
+.ux4g-form-hint {
+  font-size: 11px;
+  color: var(--ux4g-text-tertiary);
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+.ux4g-input,
+.ux4g-select,
+.ux4g-textarea {
+  width: 100%;
+  font-family: var(--ux4g-font-family);
+  font-size: 14px;
+  color: var(--ux4g-text-primary);
+  background-color: var(--ux4g-bg-elevated);
+  border: 1px solid var(--ux4g-control-border);
+  border-radius: var(--ux4g-radius-md);
+  padding: 8px 12px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  box-sizing: border-box;
+}
+
+.ux4g-input:focus,
+.ux4g-select:focus,
+.ux4g-textarea:focus {
+  outline: none;
+  border-color: var(--ux4g-focus-outline);
+  box-shadow: var(--ux4g-focus-shadow);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   UX4G Card
+───────────────────────────────────────────────────────────────────────────── */
+.ux4g-card {
+  background-color: var(--ux4g-bg-elevated);
+  border: 1px solid var(--ux4g-border-default);
+  border-radius: var(--ux4g-radius-lg);
+  box-shadow: var(--ux4g-elevation-1);
+}
+
+.ux4g-card-elevated {
+  box-shadow: var(--ux4g-elevation-2);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   UX4G Badge / Status Chip
+───────────────────────────────────────────────────────────────────────────── */
+.ux4g-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--ux4g-radius-full);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.ux4g-badge-primary {
+  background-color: var(--ux4g-primary-subtle);
+  color: var(--ux4g-primary-strong);
+  border: 1px solid #C4B5FD;
+}
+
+.ux4g-badge-success {
+  background-color: var(--ux4g-status-success-bg);
+  color: var(--ux4g-status-success);
+  border: 1px solid var(--ux4g-status-success-border);
+}
+
+.ux4g-badge-warning {
+  background-color: var(--ux4g-status-warning-bg);
+  color: var(--ux4g-status-warning);
+  border: 1px solid var(--ux4g-status-warning-border);
+}
+
+.ux4g-badge-error {
+  background-color: var(--ux4g-status-error-bg);
+  color: var(--ux4g-status-error);
+  border: 1px solid var(--ux4g-status-error-border);
+}
+
+.ux4g-badge-info {
+  background-color: var(--ux4g-status-info-bg);
+  color: var(--ux4g-status-info);
+  border: 1px solid var(--ux4g-status-info-border);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   UX4G Alert Box
+───────────────────────────────────────────────────────────────────────────── */
+.ux4g-alert {
+  padding: 12px 16px;
+  border-radius: var(--ux4g-radius-md);
+  border: 1px solid transparent;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.ux4g-alert-info {
+  background-color: var(--ux4g-status-info-bg);
+  border-color: var(--ux4g-status-info-border);
+  color: var(--ux4g-status-info);
+}
+
+.ux4g-alert-warning {
+  background-color: var(--ux4g-status-warning-bg);
+  border-color: var(--ux4g-status-warning-border);
+  color: var(--ux4g-status-warning);
+}
+
+.ux4g-alert-success {
+  background-color: var(--ux4g-status-success-bg);
+  border-color: var(--ux4g-status-success-border);
+  color: var(--ux4g-status-success);
+}
+
+.ux4g-alert-error {
+  background-color: var(--ux4g-status-error-bg);
+  border-color: var(--ux4g-status-error-border);
+  color: var(--ux4g-status-error);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   UX4G Table
+───────────────────────────────────────────────────────────────────────────── */
+.ux4g-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  text-align: left;
+}
+
+.ux4g-table th {
+  background-color: var(--ux4g-bg-soft);
+  color: var(--ux4g-text-primary);
+  font-weight: 700;
+  padding: 10px 14px;
+  border-bottom: 2px solid var(--ux4g-border-default);
+}
+
+.ux4g-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--ux4g-border-subtle);
+  color: var(--ux4g-text-secondary);
+}
+
+.ux4g-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Print Stylesheet for Tax Computation Sheet Export
+───────────────────────────────────────────────────────────────────────────── */
+@media print {
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+
+  #app-header,
+  #stage-progress-nav,
+  #btn-income-prev,
+  #btn-income-next,
+  #btn-deductions-prev,
+  #btn-deductions-next,
+  #btn-taxes-prev,
+  #btn-taxes-next,
+  #btn-readiness-prev,
+  #btn-print-sheet,
+  #btn-export-json,
+  #btn-open-filing-guide,
+  #btn-start-fresh,
+  #modal-scenarios-overlay,
+  footer {
+    display: none !important;
+  }
+
+  #tax-computation-sheet {
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+}

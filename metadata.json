@@ -1,0 +1,6 @@
+{
+  "name": "Citizen TaxPrep - Universal ITR Assistant",
+  "description": "A citizen-first, accessible Indian Income Tax Return preparation assistant following UX4G standards. Guides taxpayers through ITR-1, ITR-2, ITR-3, and ITR-4 with plain language, progressive disclosure, regime comparison, and readiness validation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
