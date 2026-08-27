@@ -31,7 +31,9 @@ export const CurrencyInput: React.FC<CurrencyInputProps> = ({
 
   return (
     <div className="ux4g-input-group">
-      <span className="ux4g-input-prefix" aria-hidden="true">₹</span>
+      <span className="ux4g-input-prefix" aria-hidden="true" style={{ backgroundColor: 'transparent' }}>
+        ₹
+      </span>
       <input
         id={id}
         type="text"

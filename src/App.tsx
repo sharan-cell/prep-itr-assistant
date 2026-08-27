@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { 
   FullTaxPreparationData, 
   LanguageCode, 
@@ -21,6 +21,7 @@ import { StepDeductionsAndRegime } from './components/StepDeductionsAndRegime';
 import { StepTaxesPaid } from './components/StepTaxesPaid';
 import { StepReadinessSummary } from './components/StepReadinessSummary';
 import { SampleScenariosModal } from './components/SampleScenariosModal';
+import { AuthPage, initialMockUsers, MockAuthUser } from './components/AuthPage';
 import { ShieldCheck, Building2 } from 'lucide-react';
 
 const initialData: FullTaxPreparationData = {
@@ -112,6 +113,38 @@ export default function App() {
   const [textSize, setTextSize] = useState<TextSizeMode>('normal');
   const [isHighContrast, setIsHighContrast] = useState<boolean>(false);
   const [isScenariosOpen, setIsScenariosOpen] = useState<boolean>(false);
+  const [authPath, setAuthPath] = useState<'login' | 'register' | 'app'>(() => {
+    const path = window.location.pathname;
+    return path === '/register' ? 'register' : path === '/app' ? 'app' : 'login';
+  });
+  const [mockUsers, setMockUsers] = useState<MockAuthUser[]>(initialMockUsers);
+  const [currentUser, setCurrentUser] = useState<MockAuthUser | null>(null);
+
+  // Scale the document root so rem-based typography (including Tailwind's
+  // text utilities) grows with the selected accessibility text size. The
+  // previous implementation only changed the app container's inherited
+  // font-size, which left fixed/rem-based text unchanged.
+  useEffect(() => {
+    const root = document.documentElement;
+    const previousFontSize = root.style.fontSize;
+    const rootFontSize = textSize === 'xlarge' ? '125%' : textSize === 'large' ? '112.5%' : '100%';
+
+    root.style.fontSize = rootFontSize;
+
+    return () => {
+      root.style.fontSize = previousFontSize;
+    };
+  }, [textSize]);
+
+  useEffect(() => {
+    const handlePopState = () => {
+      const path = window.location.pathname;
+      setAuthPath(path === '/register' ? 'register' : path === '/app' ? 'app' : 'login');
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
   const t = translations[currentLang] || translations.en;
 
@@ -175,6 +208,39 @@ export default function App() {
     setMaxCompletedStage(1);
   };
 
+  const navigateTo = (target: 'login' | 'register' | 'app') => {
+    const nextPath = target === 'app' ? '/app' : `/${target}`;
+    window.history.pushState(null, '', nextPath);
+    setAuthPath(target);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleLogin = (user: MockAuthUser) => {
+    setCurrentUser(user);
+    setData((prev) => ({
+      ...prev,
+      profile: {
+        ...prev.profile,
+        name: user.name,
+        contactEmail: user.email,
+      },
+    }));
+    navigateTo('app');
+  };
+
+  const handleRegister = (user: MockAuthUser) => {
+    setMockUsers((prev) => [...prev, user]);
+    handleLogin(user);
+  };
+
+  const handleSignOut = () => {
+    setCurrentUser(null);
+    setIsScenariosOpen(false);
+    navigateTo('login');
+  };
+
+  const isAuthScreen = authPath === 'login' || authPath === 'register' || !currentUser;
+
   return (
     <div
       className={`min-h-screen flex flex-col bg-slate-100 text-slate-900 transition-all ${
@@ -185,6 +251,16 @@ export default function App() {
           : 'text-size-normal'
       } ${isHighContrast ? 'high-contrast-mode' : ''}`}
     >
+      {isAuthScreen ? (
+        <AuthPage
+          mode={authPath === 'register' ? 'register' : 'login'}
+          mockUsers={mockUsers}
+          onLogin={handleLogin}
+          onRegister={handleRegister}
+          onNavigate={navigateTo}
+        />
+      ) : (
+        <>
       {/* Top Universal Navbar */}
       <Navbar
         currentLang={currentLang}
@@ -195,6 +271,8 @@ export default function App() {
         onToggleHighContrast={() => setIsHighContrast(!isHighContrast)}
         onOpenScenarios={() => setIsScenariosOpen(true)}
         onReset={handleReset}
+        currentUserName={currentUser.name}
+        onSignOut={handleSignOut}
       />
 
       {/* Stage Stepper */}
@@ -318,6 +396,8 @@ export default function App() {
         onSelectScenario={handleSelectScenario}
         currentLang={currentLang}
       />
+        </>
+      )}
     </div>
   );
 }

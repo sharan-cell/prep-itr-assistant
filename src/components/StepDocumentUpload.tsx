@@ -31,7 +31,7 @@ import {
   TaxDocumentType,
   DocumentChecklistItem
 } from '../types';
-import { translations } from '../data/translations';
+import { translations, type TranslationDictionary } from '../data/translations';
 import { formatINR } from '../utils/formatters';
 
 interface StepDocumentUploadProps {
@@ -48,7 +48,7 @@ const InspectModal: React.FC<{
   doc: UploadedTaxDocument;
   onClose: () => void;
   onApplySingle: (doc: UploadedTaxDocument) => void;
-  t: ReturnType<typeof translations['en']['toString'] extends never ? typeof translations['en'] : typeof translations['en']>;
+  t: TranslationDictionary;
 }> = ({ doc, onClose, onApplySingle, t }) => {
   const f = doc.extractedFields || {};
 

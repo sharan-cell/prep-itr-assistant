@@ -99,11 +99,25 @@ body {
 }
 
 .text-size-large {
-  font-size: 112.5%;
+  font-size: 100%;
 }
 
 .text-size-xlarge {
-  font-size: 125%;
+  font-size: 100%;
+}
+
+/*
+ * Tailwind's arbitrary text utilities use fixed px values. Re-express the
+ * small utility sizes in rem so the document-root scaler above affects them
+ * too. The attribute selector keeps this compatible with generated utility
+ * class names such as `text-[11px]`.
+ */
+#root [class~="text-[10px]"] {
+  font-size: 0.625rem;
+}
+
+#root [class~="text-[11px]"] {
+  font-size: 0.6875rem;
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -261,19 +275,19 @@ body {
 
 .ux4g-btn-sm {
   padding: 6px 12px;
-  font-size: 12px;
+  font-size: 0.75rem;
   min-height: 32px;
 }
 
 .ux4g-btn-md {
   padding: 8px 16px;
-  font-size: 14px;
+  font-size: 0.875rem;
   min-height: 40px;
 }
 
 .ux4g-btn-lg {
   padding: 12px 24px;
-  font-size: 16px;
+  font-size: 1rem;
   min-height: 48px;
 }
 
@@ -360,7 +374,7 @@ body {
   width: 36px;
   color: #6B7280;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 0.875rem;
   pointer-events: none;
   z-index: 1;
   border-right: 1px solid #D1D5DB;
@@ -382,14 +396,14 @@ body {
 ───────────────────────────────────────────────────────────────────────────── */
 .ux4g-form-label {
   display: block;
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 600;
   color: var(--ux4g-text-primary);
   margin-bottom: 4px;
 }
 
 .ux4g-form-hint {
-  font-size: 11px;
+  font-size: 0.6875rem;
   color: var(--ux4g-text-tertiary);
   margin-top: 4px;
   line-height: 1.4;
@@ -400,7 +414,7 @@ body {
 .ux4g-textarea {
   width: 100%;
   font-family: var(--ux4g-font-family);
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--ux4g-text-primary);
   background-color: var(--ux4g-bg-elevated);
   border: 1px solid var(--ux4g-control-border);
@@ -439,7 +453,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 700;
   padding: 3px 8px;
   border-radius: var(--ux4g-radius-full);
@@ -485,7 +499,7 @@ body {
   padding: 12px 16px;
   border-radius: var(--ux4g-radius-md);
   border: 1px solid transparent;
-  font-size: 13px;
+  font-size: 0.8125rem;
   line-height: 1.45;
 }
 
@@ -519,7 +533,7 @@ body {
 .ux4g-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 13px;
+  font-size: 0.8125rem;
   text-align: left;
 }
 

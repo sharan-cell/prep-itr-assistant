@@ -5,7 +5,9 @@ import {
   BookOpen, 
   Eye, 
   ChevronDown,
-  Building2
+  Building2,
+  LogOut,
+  UserCircle
 } from 'lucide-react';
 import { LanguageCode, TextSizeMode } from '../types';
 import { translations } from '../data/translations';
@@ -19,6 +21,8 @@ interface NavbarProps {
   onToggleHighContrast: () => void;
   onOpenScenarios: () => void;
   onReset: () => void;
+  currentUserName?: string;
+  onSignOut?: () => void;
 }
 
 const languageOptions: { code: LanguageCode; label: string; native: string }[] = [
@@ -41,6 +45,8 @@ export const Navbar: React.FC<NavbarProps> = ({
   onToggleHighContrast,
   onOpenScenarios,
   onReset,
+  currentUserName,
+  onSignOut,
 }) => {
   const [langMenuOpen, setLangMenuOpen] = useState(false);
   const t = translations[currentLang] || translations.en;
@@ -197,6 +203,13 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* Action Controls */}
         <div className="flex items-center gap-2">
+          {currentUserName && (
+            <div className="hidden md:flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-semibold rounded-md text-slate-200 border border-slate-700 bg-slate-900">
+              <UserCircle className="w-3.5 h-3.5 text-emerald-400" />
+              <span>{currentUserName}</span>
+            </div>
+          )}
+
           {/* Sample Taxpayer Scenarios */}
           <button
             id="btn-sample-scenarios"
@@ -221,6 +234,20 @@ export const Navbar: React.FC<NavbarProps> = ({
             <RotateCcw className="w-3.5 h-3.5" />
             <span className="hidden sm:inline">{t.startFresh}</span>
           </button>
+
+          {onSignOut && (
+            <button
+              id="btn-sign-out"
+              type="button"
+              onClick={onSignOut}
+              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-md text-slate-300 hover:text-white hover:bg-slate-800 border border-slate-700 transition-colors"
+              title="Sign out"
+              aria-label="Sign out"
+            >
+              <LogOut className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">Sign out</span>
+            </button>
+          )}
         </div>
       </div>
     </header>
