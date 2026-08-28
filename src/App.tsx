@@ -115,7 +115,7 @@ export default function App() {
   const [isScenariosOpen, setIsScenariosOpen] = useState<boolean>(false);
   const [authPath, setAuthPath] = useState<'login' | 'register' | 'app'>(() => {
     const path = window.location.pathname;
-    return path === '/register' ? 'register' : path === '/app' ? 'app' : 'login';
+    return path === '/register' ? 'register' : 'login';
   });
   const [mockUsers, setMockUsers] = useState<MockAuthUser[]>(initialMockUsers);
   const [currentUser, setCurrentUser] = useState<MockAuthUser | null>(null);
@@ -139,7 +139,7 @@ export default function App() {
   useEffect(() => {
     const handlePopState = () => {
       const path = window.location.pathname;
-      setAuthPath(path === '/register' ? 'register' : path === '/app' ? 'app' : 'login');
+      setAuthPath(path === '/register' ? 'register' : 'login');
     };
 
     window.addEventListener('popstate', handlePopState);
@@ -208,8 +208,8 @@ export default function App() {
     setMaxCompletedStage(1);
   };
 
-  const navigateTo = (target: 'login' | 'register' | 'app') => {
-    const nextPath = target === 'app' ? '/app' : `/${target}`;
+  const navigateTo = (target: 'login' | 'register') => {
+    const nextPath = `/${target}`;
     window.history.pushState(null, '', nextPath);
     setAuthPath(target);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -225,7 +225,9 @@ export default function App() {
         contactEmail: user.email,
       },
     }));
-    navigateTo('app');
+    setAuthPath('app');
+    window.history.pushState(null, '', '/');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleRegister = (user: MockAuthUser) => {

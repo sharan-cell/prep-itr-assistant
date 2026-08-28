@@ -250,7 +250,7 @@ export interface TranslationDictionary {
 export const translations: Record<LanguageCode, TranslationDictionary> = {
   en: {
     appTitle: 'Citizen TaxPrep',
-    appSubtitle: 'Universal ITR-2 Assistant • AY 2025-26',
+    appSubtitle: 'Universal ITR Assistant • AY 2025-26',
     loadScenario: 'Sample Profiles',
     startFresh: 'Start Fresh',
     confirmReset: 'Reset current tax preparation data to start fresh?',

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { 
-  Languages, 
-  RotateCcw, 
-  BookOpen, 
-  Eye, 
+import {
+  Languages,
+  RotateCcw,
+  BookOpen,
+  Eye,
   ChevronDown,
   Building2,
   LogOut,
@@ -63,14 +63,14 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* 2. UX4G Standard Top Accessibility Bar */}
       <div className="bg-[#141824] px-4 py-1 text-xs text-slate-300 border-b border-slate-800">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-end gap-2">
           {/* Identity & Independent Prototype Notice */}
-          <div className="flex items-center gap-2">
+          {/* <div className="flex items-center gap-2">
             <span className="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
             <span className="font-semibold text-slate-200">UX4G Citizen TaxPrep</span>
             <span className="text-slate-500">•</span>
             <span className="text-slate-400 hidden md:inline">{t.independentPrototype}</span>
-          </div>
+          </div> */}
 
           {/* Accessibility Controls & Language Switcher */}
           <div className="flex items-center gap-2 sm:gap-3">
@@ -81,9 +81,8 @@ export const Navbar: React.FC<NavbarProps> = ({
                 id="btn-text-normal"
                 type="button"
                 onClick={() => onTextSizeChange('normal')}
-                className={`px-1.5 py-0.5 text-xs font-semibold rounded transition-colors ${
-                  textSize === 'normal' ? 'bg-[#4A2BC2] text-white' : 'text-slate-300 hover:text-white'
-                }`}
+                className={`px-1.5 py-0.5 text-xs font-semibold rounded transition-colors ${textSize === 'normal' ? 'bg-[#4A2BC2] text-white' : 'text-slate-300 hover:text-white'
+                  }`}
                 title="Standard Text"
                 aria-label="Standard Text Size"
               >
@@ -93,9 +92,8 @@ export const Navbar: React.FC<NavbarProps> = ({
                 id="btn-text-large"
                 type="button"
                 onClick={() => onTextSizeChange('large')}
-                className={`px-1.5 py-0.5 text-sm font-semibold rounded transition-colors ${
-                  textSize === 'large' ? 'bg-[#4A2BC2] text-white' : 'text-slate-300 hover:text-white'
-                }`}
+                className={`px-1.5 py-0.5 text-sm font-semibold rounded transition-colors ${textSize === 'large' ? 'bg-[#4A2BC2] text-white' : 'text-slate-300 hover:text-white'
+                  }`}
                 title="Large Text"
                 aria-label="Large Text Size"
               >
@@ -105,9 +103,8 @@ export const Navbar: React.FC<NavbarProps> = ({
                 id="btn-text-xlarge"
                 type="button"
                 onClick={() => onTextSizeChange('xlarge')}
-                className={`px-1.5 py-0.5 text-base font-bold rounded transition-colors ${
-                  textSize === 'xlarge' ? 'bg-[#4A2BC2] text-white' : 'text-slate-300 hover:text-white'
-                }`}
+                className={`px-1.5 py-0.5 text-base font-bold rounded transition-colors ${textSize === 'xlarge' ? 'bg-[#4A2BC2] text-white' : 'text-slate-300 hover:text-white'
+                  }`}
                 title="Extra Large Text"
                 aria-label="Extra Large Text Size"
               >
@@ -120,11 +117,10 @@ export const Navbar: React.FC<NavbarProps> = ({
               id="btn-high-contrast"
               type="button"
               onClick={onToggleHighContrast}
-              className={`flex items-center gap-1 px-2 py-0.5 rounded border text-xs font-medium transition-colors ${
-                isHighContrast 
-                  ? 'bg-amber-400 text-black border-amber-300 font-bold' 
-                  : 'bg-slate-900 text-slate-300 border-slate-700 hover:text-white'
-              }`}
+              className={`flex items-center gap-1 px-2 py-0.5 rounded border text-xs font-medium transition-colors ${isHighContrast
+                ? 'bg-amber-400 text-black border-amber-300 font-bold'
+                : 'bg-slate-900 text-slate-300 border-slate-700 hover:text-white'
+                }`}
               title="Toggle High Contrast"
               aria-label="Toggle High Contrast"
             >
@@ -148,7 +144,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               </button>
 
               {langMenuOpen && (
-                <div 
+                <div
                   id="lang-dropdown-menu"
                   className="absolute right-0 mt-1 w-48 bg-white text-slate-800 rounded-lg shadow-xl border border-slate-200 py-1.5 z-50 animate-in fade-in duration-100"
                 >
@@ -164,11 +160,10 @@ export const Navbar: React.FC<NavbarProps> = ({
                         onLanguageChange(opt.code);
                         setLangMenuOpen(false);
                       }}
-                      className={`w-full text-left px-3 py-1.5 text-xs flex items-center justify-between transition-colors ${
-                        currentLang === opt.code
-                          ? 'bg-purple-50 text-[#4A2BC2] font-bold'
-                          : 'hover:bg-slate-100 text-slate-700'
-                      }`}
+                      className={`w-full text-left px-3 py-1.5 text-xs flex items-center justify-between transition-colors ${currentLang === opt.code
+                        ? 'bg-purple-50 text-[#4A2BC2] font-bold'
+                        : 'hover:bg-slate-100 text-slate-700'
+                        }`}
                     >
                       <span>{opt.native}</span>
                       <span className="text-[11px] text-slate-400">({opt.label})</span>
