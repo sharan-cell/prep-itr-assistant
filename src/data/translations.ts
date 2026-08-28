@@ -288,7 +288,7 @@ export const translations: Record<LanguageCode, TranslationDictionary> = {
     statusMissing: 'Missing Information',
 
     landingEyebrow: 'A citizen-first preparation guide',
-    landingHeadline: 'Prepare for your ITR-2 with confidence',
+    landingHeadline: 'Prepare for your ITR with confidence',
     landingDescription: "Answer a few simple questions about your finances. We'll help you understand what information applies to you, calculate your tax under both regimes, and review potential gaps before filing.",
     journeyStep1: 'Tell us what happened financially this year',
     journeyStep2: 'Gather and auto-fill your documents',
@@ -490,7 +490,7 @@ export const translations: Record<LanguageCode, TranslationDictionary> = {
 
   hi: {
     appTitle: 'नागरिक टैक्सप्रेप',
-    appSubtitle: 'यूनिवर्सल ITR-2 सहायक • कर निर्धारण वर्ष 2025-26',
+    appSubtitle: 'यूनिवर्सल ITR सहायक • कर निर्धारण वर्ष 2025-26',
     loadScenario: 'नमूना प्रोफाइल',
     startFresh: 'शुरुआत करें',
     confirmReset: 'क्या आप वर्तमान तैयारी डेटा रीसेट कर नए सिरे से शुरू करना चाहते हैं?',
@@ -730,7 +730,7 @@ export const translations: Record<LanguageCode, TranslationDictionary> = {
 
   mr: {
     appTitle: 'नागरिक टॅक्सप्रेप',
-    appSubtitle: 'युनिव्हर्सल ITR-2 सहाय्यक • कर वर्ष 2025-26',
+    appSubtitle: 'युनिव्हर्सल ITR सहाय्यक • कर वर्ष 2025-26',
     loadScenario: 'नमुना प्रोफाइल',
     startFresh: 'नवीन सुरुवात',
     confirmReset: 'सध्याचा डेटा रीसेट करून नव्याने सुरुवात करायची आहे का?',
@@ -970,7 +970,7 @@ export const translations: Record<LanguageCode, TranslationDictionary> = {
 
   ta: {
     appTitle: 'குடிமக்கள் வரி வழிகாட்டி',
-    appSubtitle: 'யுனிவர்சல் ITR-2 உதவியாளர் • மதிப்பீட்டு ஆண்டு 2025-26',
+    appSubtitle: 'யுனிவர்சல் ITR உதவியாளர் • மதிப்பீட்டு ஆண்டு 2025-26',
     loadScenario: 'மாதிரி விவரங்கள்',
     startFresh: 'புதிதாக தொடங்கு',
     confirmReset: 'தற்போதைய தயாரிப்புத் தரவை மீட்டமைக்க விரும்புகிறீர்களா?',
@@ -1210,7 +1210,7 @@ export const translations: Record<LanguageCode, TranslationDictionary> = {
 
   te: {
     appTitle: 'సిటిజన్ టాక్స్‌ప్రెప్',
-    appSubtitle: 'యూనివర్సల్ ITR-2 అసిస్టెంట్ • అసెస్‌మెంట్ ఇయర్ 2025-26',
+    appSubtitle: 'యూనివర్సల్ ITR అసిస్టెంట్ • అసెస్‌మెంట్ ఇయర్ 2025-26',
     loadScenario: 'నమూనా ప్రొఫైల్స్',
     startFresh: 'మళ్లీ ప్రారంభించండి',
     confirmReset: 'ప్రస్తుత డేటాను రీసెట్ చేసి కొత్తగా ప్రారంభించాలనుకుంటున్నారా?',
@@ -1450,7 +1450,7 @@ export const translations: Record<LanguageCode, TranslationDictionary> = {
 
   bn: {
     appTitle: 'সিটিজেন ট্যাক্সপ্রেপ',
-    appSubtitle: 'সার্বজনীন ITR-2 সহায়ক • কর বর্ষ ২০২৫-২৬',
+    appSubtitle: 'সার্বজনীন ITR সহায়ক • কর বর্ষ ২০২৫-২৬',
     loadScenario: 'নমুনা প্রোফাইল',
     startFresh: 'নতুন করে শুরু',
     confirmReset: 'আপনি কি বর্তমান তথ্য মুছে নতুন করে শুরু করতে চান?',
@@ -1690,7 +1690,7 @@ export const translations: Record<LanguageCode, TranslationDictionary> = {
 
   gu: {
     appTitle: 'નાગરિક ટેક્સપ્રેપ',
-    appSubtitle: 'યુનિવર્સલ ITR-2 સહાયક • કર નિર્ધારણ વર્ષ 2025-26',
+    appSubtitle: 'યુનિવર્સલ ITR સહાયક • કર નિર્ધારણ વર્ષ 2025-26',
     loadScenario: 'નમૂના પ્રોફાઇલ',
     startFresh: 'નવેસરથી શરૂ કરો',
     confirmReset: 'શું તમે વર્તમાન ડેટા રીસેટ કરી નવેસરથી શરૂ કરવા માંગો છો?',
@@ -1930,7 +1930,7 @@ export const translations: Record<LanguageCode, TranslationDictionary> = {
 
   kn: {
     appTitle: 'ಸಿಟಿಜನ್ ಟ್ಯಾಕ್ಸ್‌ಪ್ರೆಪ್',
-    appSubtitle: 'ಯೂನಿವರ್ಸಲ್ ITR-2 ಸಹಾಯಕ • ಮೌಲ್ಯಮಾಪನ ವರ್ಷ 2025-26',
+    appSubtitle: 'ಯೂನಿವರ್ಸಲ್ ITR ಸಹಾಯಕ • ಮೌಲ್ಯಮಾಪನ ವರ್ಷ 2025-26',
     loadScenario: 'ಮಾದರಿ ಪ್ರೊಫೈಲ್‌ಗಳು',
     startFresh: 'ಹೊಸದಾಗಿ ಪ್ರಾರಂಭಿಸಿ',
     confirmReset: 'ಪ್ರಸ್ತುತ ಡೇಟಾವನ್ನು ಮರುಹೊಂದಿಸಿ ಹೊಸದಾಗಿ ಪ್ರಾರಂಭಿಸಲು ಬಯಸುವಿರಾ?',

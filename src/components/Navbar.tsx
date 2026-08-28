@@ -63,14 +63,14 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       {/* 2. UX4G Standard Top Accessibility Bar */}
       <div className="bg-[#141824] px-4 py-1 text-xs text-slate-300 border-b border-slate-800">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-end gap-2">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
           {/* Identity & Independent Prototype Notice */}
-          {/* <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2">
             <span className="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
             <span className="font-semibold text-slate-200">UX4G Citizen TaxPrep</span>
             <span className="text-slate-500">•</span>
             <span className="text-slate-400 hidden md:inline">{t.independentPrototype}</span>
-          </div> */}
+          </div>
 
           {/* Accessibility Controls & Language Switcher */}
           <div className="flex items-center gap-2 sm:gap-3">
@@ -176,7 +176,8 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
       </div>
 
-      {/* 3. Main Brand Navbar (Clean & Minimal UX4G Contract) */}
+
+
       <div className="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
         {/* Brand Identity */}
         <div className="flex items-center gap-3">
@@ -187,7 +188,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <div className="flex items-center gap-2">
               <span className="text-base sm:text-lg font-bold tracking-tight text-white">{t.appTitle}</span>
               <span className="bg-purple-900/60 text-purple-200 border border-purple-400/30 text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded hidden sm:inline">
-                ITR-2
+                ITR
               </span>
             </div>
             <p className="text-xs text-slate-300">
