@@ -528,7 +528,7 @@ export const translations: Record<LanguageCode, TranslationDictionary> = {
     statusMissing: 'अधूरी जानकारी',
 
     landingEyebrow: 'नागरिक-प्रथम ITR तैयारी मार्गदर्शिका',
-    landingHeadline: 'विश्वास के साथ ITR-2 दाखिल करने की तैयारी करें',
+    landingHeadline: 'विश्वास के साथ ITR दाखिल करने की तैयारी करें',
     landingDescription: 'अपने वित्तीय विवरण के कुछ सरल प्रश्नों के उत्तर दें। हम आपको सही शेड्यूल, दोनों टैक्स रिजीम की तुलना और छूट्टी हुई बातों की समीक्षा में मदद करेंगे।',
     journeyStep1: 'इस वर्ष के वित्तीय आय स्रोतों का चयन करें',
     journeyStep2: 'दस्तावेज अपलोड कर विवरण ऑटो-भरें',
@@ -768,7 +768,7 @@ export const translations: Record<LanguageCode, TranslationDictionary> = {
     statusMissing: 'माहिती अपूर्ण',
 
     landingEyebrow: 'नागरिक-प्रथम ITR पूर्वतयारी मार्गदर्शक',
-    landingHeadline: 'आत्मविश्वासाने ITR-2 भरण्याची तयारी करा',
+    landingHeadline: 'आत्मविश्वासाने ITR भरण्याची तयारी करा',
     landingDescription: 'आपल्या आर्थिक व्यवहारांबद्दल काही सोप्या प्रश्नांची उत्तरे द्या. आम्ही आपल्याला योग्य फॉर्म निवडण्यात, दोन्ही करप्रणालींची तुलना करण्यात आणि संभाव्य त्रुटी तपासण्यात मदत करू.',
     journeyStep1: 'आपल्या उत्पन्नाचे स्रोत निवडा',
     journeyStep2: 'दस्तऐवज अपलोड करून माहिती भरा',
@@ -1008,7 +1008,7 @@ export const translations: Record<LanguageCode, TranslationDictionary> = {
     statusMissing: 'விடுபட்ட தகவல்',
 
     landingEyebrow: 'குடிமக்களுக்கான எளிய ITR வழிகாட்டி',
-    landingHeadline: 'நம்பிக்கையுடன் ITR-2 தாக்கல் செய்ய தயாராகுங்கள்',
+    landingHeadline: 'நம்பிக்கையுடன் ITR தாக்கல் செய்ய தயாராகுங்கள்',
     landingDescription: 'உங்கள் நிதி சார்ந்த எளிய கேள்விகளுக்கு பதிலளிக்கவும். சரியான படிவம் மற்றும் புதிய/பழைய வரி முறைகளின் ஒப்பீட்டை அறிய நாங்கள் உதவுவோம்.',
     journeyStep1: 'வருமான ஆதாரங்களைத் தேர்ந்தெடுக்கவும்',
     journeyStep2: 'ஆவணங்களைப் பதிவேற்றி தானாக நிரப்பவும்',
@@ -1248,7 +1248,7 @@ export const translations: Record<LanguageCode, TranslationDictionary> = {
     statusMissing: 'సమాచారం లేదు',
 
     landingEyebrow: 'పౌరుల కోసం సులభమైన ITR గైడ్',
-    landingHeadline: 'పూర్తి విశ్వాసంతో ITR-2 దాఖలు చేయడానికి సిద్ధం కండి',
+    landingHeadline: 'పూర్తి విశ్వాసంతో ITR దాఖలు చేయడానికి సిద్ధం కండి',
     landingDescription: 'మీ ఆర్థిక వివరాలకు సంబంధించిన కొన్ని సాధారణ ప్రశ్నలకు సమాధానం ఇవ్వండి. మేము సరైన ఫారమ్ ఎంపిక, పన్ను విధానాల పోలిక మరియు లోపాల సమీక్షలో సహాయం చేస్తాము.',
     journeyStep1: 'మీ ఆదాయ వనరులను ఎంచుకోండి',
     journeyStep2: 'పత్రాలను అప్‌లోడ్ చేసి వివరాలు నింపండి',
@@ -1488,7 +1488,7 @@ export const translations: Record<LanguageCode, TranslationDictionary> = {
     statusMissing: 'অনুপস্থিত তথ্য',
 
     landingEyebrow: 'নাগরিক-প্রথম ITR প্রস্তুতি গাইড',
-    landingHeadline: 'আত্মবিশ্বাসের সাথে ITR-2 দাখিলের প্রস্তুতি নিন',
+    landingHeadline: 'আত্মবিশ্বাসের সাথে ITR দাখিলের প্রস্তুতি নিন',
     landingDescription: 'আপনার আর্থিক আয়ের কয়েকটি সহজ প্রশ্নের উত্তর দিন। আমরা সঠিক ফর্ম নির্বাচন, কর ব্যবস্থার তুলনা ও সম্ভাব্য ভুলত্রুটি সংশোধনে সাহায্য করব।',
     journeyStep1: 'আপনার আয়ের উৎসগুলি নির্বাচন করুন',
     journeyStep2: 'নথি আপলোড করে স্বয়ংক্রিয়ভাবে পূরণ করুন',
@@ -1728,7 +1728,7 @@ export const translations: Record<LanguageCode, TranslationDictionary> = {
     statusMissing: 'અપૂર્ણ માહિતી',
 
     landingEyebrow: 'નાગરિક-પ્રથમ ITR માર્ગદર્શિકા',
-    landingHeadline: 'આત્મવિશ્વાસ સાથે ITR-2 ભરવાની તૈયારી કરો',
+    landingHeadline: 'આત્મવિશ્વાસ સાથે ITR ભરવાની તૈયારી કરો',
     landingDescription: 'તમારી નાણાકીય આવકના સરળ પ્રશ્નોના જવાબ આપો. અમે તમને યોગ્ય ફોર્મ પસંદ કરવામાં અને બંને કર વ્યવસ્થાઓની સરખામણી કરવામાં મદદ કરીશું.',
     journeyStep1: 'તમારી આવકના સ્ત્રોતો પસંદ કરો',
     journeyStep2: 'દસ્તાવેજો અપલોડ કરી વિગતો ભરો',
@@ -1968,7 +1968,7 @@ export const translations: Record<LanguageCode, TranslationDictionary> = {
     statusMissing: 'ಮಾಹಿತಿ ಕೊರತೆ',
 
     landingEyebrow: 'ನಾಗರಿಕರ ಮೊದಲ ITR ಮಾರ್ಗದರ್ಶಿ',
-    landingHeadline: 'ಪೂರ್ಣ ವಿಶ್ವಾಸದೊಂದಿಗೆ ITR-2 ಸಲ್ಲಿಸಲು ಸಿದ್ಧರಾಗಿ',
+    landingHeadline: 'ಪೂರ್ಣ ವಿಶ್ವಾಸದೊಂದಿಗೆ ITR ಸಲ್ಲಿಸಲು ಸಿದ್ಧರಾಗಿ',
     landingDescription: 'ನಿಮ್ಮ ಆದಾಯದ ಕುರಿತ ಸರಳ ಪ್ರಶ್ನೆಗಳಿಗೆ ಉತ್ತರಿಸಿ. ಸರಿಯಾದ ಫಾರ್ಮ್ ಆಯ್ಕೆ ಮತ್ತು ಹೊಸ/ಹಳೆಯ ತೆರಿಗೆ ಪದ್ಧತಿಗಳ ಹೋಲಿಕೆಯಲ್ಲಿ ನಾವು ಸಹಾಯ ಮಾಡುತ್ತೇವೆ.',
     journeyStep1: 'ನಿಮ್ಮ ಆದಾಯದ ಮೂಲಗಳನ್ನು ಆಯ್ಕೆಮಾಡಿ',
     journeyStep2: 'ದಾಖಲೆಗಳನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ ವಿವರಗಳನ್ನು ಭರ್ತಿ ಮಾಡಿ',
